@@ -11,11 +11,6 @@ Public Class EmployeeList
         Startup()
     End Sub
 
-    'Public Function GetEmployees() As IQueryable(Of Employees.Entities.Employee)
-    '    Dim query As IQueryable(Of Employee) = _db.Employees
-
-    '    Return query
-    'End Function
     Private Sub Startup()
         BindRepeater()
         Me.drpDep.DataSource = _departmentService.GetAllDepartments
@@ -30,9 +25,15 @@ Public Class EmployeeList
     Protected Sub btnAdd_ServerClick(sender As Object, e As EventArgs)
         Dim departmentId = Me.drpDep.SelectedValue.ToString
         Dim employeeName = Request.Form("EmployeeName")
+        Dim mobileno = Request.Form("MobileNo")
+        Dim email = Request.Form("Email")
+        Dim birthdate = Date.Parse(Request.Form("Birthdate"))
         Dim employee As New Employee
         employee.DepartmentID = Convert.ToInt32(departmentId)
         employee.EmployeeName = employeeName
+        employee.MobileNo = mobileno
+        employee.Birthdate = birthdate
+        employee.Email = email
         _employeeService.SaveEmployee(employee)
         BindRepeater()
     End Sub

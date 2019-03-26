@@ -31,13 +31,17 @@ Namespace DAL
                 New Employee With {
                     .EmployeeID = 1,
                     .EmployeeName = "Sarah Bayrakdar",
-                    .YearBirth = 1990,
+                    .Birthdate = Date.Parse("01/01/1990"),
+                    .MobileNo = "0568880051",
+                    .Email = "sarah@gmail.com",
                     .DepartmentID = 1
                 },
               New Employee With {
                     .EmployeeID = 2,
                     .EmployeeName = "Ahmad Ahmad",
-                    .YearBirth = 1980,
+                    .Birthdate = Date.Parse("25/05/1985"),
+                    .MobileNo = "012345678",
+                    .Email = "ahmad@gmail.com",
                     .DepartmentID = 2
                 }
             }

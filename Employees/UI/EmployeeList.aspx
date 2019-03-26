@@ -5,6 +5,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Employee</h2>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Add New Employee</button>
+
     <div>
         <div class="container">
             <asp:Repeater ID="rptEmployee" runat="server">
@@ -15,21 +17,32 @@
                             </th>
                             <th scope="col" style="width: 120px">Employee Name
                             </th>
-                            <th scope="col" style="width: 100px">Year Birth
+                            <th scope="col" style="width: 100px">Birthdate
+                            </th>
+                            <th scope="col" style="width: 100px">Email
+                            </th>
+                            <th scope="col" style="width: 100px">Mobile
                             </th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("EmployeeID") %>' />
+                            <asp:Label ID="lblEmployeeId" runat="server" Text='<%# Eval("EmployeeID") %>' />
                         </td>
                         <td>
-                            <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("EmployeeName") %>' />
+                            <asp:Label ID="lblEmployeeName" runat="server" Text='<%# Eval("EmployeeName") %>' />
                         </td>
                         <td>
-                            <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("YearBirth") %>' />
+                            <asp:Label ID="lblBirthdate" runat="server" Text='<%# Eval("Birthdate") %>' />
                         </td>
+                        <td>
+                            <asp:Label ID="lblEmail" runat="server" Text='<%# Eval("Email") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblMobile" runat="server" Text='<%# Eval("MobileNo") %>' />
+                        </td>
+                        <td></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
@@ -39,11 +52,7 @@
 
 
             <div class="container">
-                <h2>Employee</h2>
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add New Employee</button>
-
-                <!-- Modal -->
+                <!-- New Employee Modal -->
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -53,22 +62,30 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form  method="POST" action="page.aspx">
+                                    <form method="POST" action="page.aspx">
                                         <div class="form-group">
                                             <label for="EmployeeName">Name</label>
                                             <input type="text" class="form-control" id="EmployeeName" placeholder="Enter Name" name="EmployeeName">
                                         </div>
                                         <div class="form-group">
-                                            <label for="YearBirth">Year Birth</label>
-                                            <input type="date" class="form-control" id="YearBirth" name="YearBirth">
+                                            <label for="Birthdate">Year Birth</label>
+                                            <input type="date" class="form-control" id="Birthdate" name="Birthdate">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Email">Email</label>
+                                            <input type="email" class="form-control" id="Email" placeholder="Email" name="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="MobileNo">Mobile No</label>
+                                            <input type="tel" class="form-control" id="MobileNo" placeholder="MobileNo" name="MobileNo">
                                         </div>
                                         <asp:DropDownList runat="server" ID="drpDep" DataValueField="DepartmentID" DataTextField="DepartmentName"></asp:DropDownList>
-                                      
+
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                  <button runat="server" onserverclick="btnAdd_ServerClick" class="btn btn-default">Add</button>
+                                <button runat="server" onserverclick="btnAdd_ServerClick" class="btn btn-default">Add</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
