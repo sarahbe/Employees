@@ -6,7 +6,7 @@ Namespace DAL
         Inherits DbContext
 
         Public Sub New()
-            MyBase.New("EmployeeDB")
+            MyBase.New("Employee")
         End Sub
 
         Public Property Departments As DbSet(Of Department)

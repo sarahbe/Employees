@@ -22,6 +22,7 @@ Namespace Migrations
                     {
                         .EmployeeID = c.Int(nullable := False, identity := True),
                         .EmployeeName = c.String(),
+                        .YearBirth = c.Int(nullable := False),
                         .DepartmentID = c.Int(nullable := False)
                     }) _
                 .PrimaryKey(Function(t) t.EmployeeID) _

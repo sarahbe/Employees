@@ -9,7 +9,7 @@ Namespace Migrations
         Inherits DbMigrationsConfiguration(Of DAL.EmployeeContext)
 
         Public Sub New()
-            AutomaticMigrationsEnabled = False
+            AutomaticMigrationsEnabled = True
         End Sub
 
         Protected Overrides Sub Seed(context As DAL.EmployeeContext)

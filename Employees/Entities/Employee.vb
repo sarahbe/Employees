@@ -4,6 +4,7 @@
         Public Property EmployeeID() As Integer
 
         Public Property EmployeeName() As String
+        Public Property YearBirth() As Integer
 
         Public Property DepartmentID() As Integer
 
@@ -17,6 +18,7 @@
                 _department = value
             End Set
         End Property
+
 
     End Class
 End Namespace
