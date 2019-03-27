@@ -7,7 +7,8 @@
         Public Property Email() As String
         Public Property MobileNo() As String
         Public Property DepartmentID() As Integer
-        Public Property Valid As Boolean
+        Public Property Valid As Boolean = True
+        Public Property Salary As Decimal
 
         Private _department As Department
         Public Property Department() As Department

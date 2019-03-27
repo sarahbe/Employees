@@ -15,6 +15,14 @@ Namespace Services
             _db.Departments.Add(dep)
             _db.SaveChanges()
         End Sub
+
+        Public Sub DeleteEmployee(depId As Integer)
+            Dim dep = _db.Departments.FirstOrDefault(Function(e) e.DepartmentID.Equals(depId))
+            dep.Valid = False
+            _db.Departments.Add(dep)
+            _db.SaveChanges()
+        End Sub
+
     End Class
 End Namespace
 

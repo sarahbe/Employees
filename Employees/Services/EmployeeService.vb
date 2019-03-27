@@ -1,4 +1,5 @@
-﻿Imports Employees.Entities
+﻿Imports System.Data.Entity.Migrations
+Imports Employees.Entities
 
 Namespace Services
     Public Class EmployeeService
@@ -18,6 +19,16 @@ Namespace Services
         End Function
 
         Public Sub SaveEmployee(emp As Employee)
+            'If emp.EmployeeID <> Nothing Then
+
+            'End If
+            _db.Employees.AddOrUpdate(emp)
+            _db.SaveChanges()
+        End Sub
+
+        Public Sub DeleteEmployee(empId As Integer)
+            Dim emp = _db.Employees.FirstOrDefault(Function(e) e.EmployeeID.Equals(empId))
+            emp.Valid = False
             _db.Employees.Add(emp)
             _db.SaveChanges()
         End Sub

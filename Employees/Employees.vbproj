@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
+    <Content Include="Content\crudTable.css" />
     <Content Include="Content\fontawesome-all.css" />
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
@@ -166,6 +167,7 @@
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DepartmentTable.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -190,8 +192,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="UI\About.aspx" />
-    <Content Include="UI\Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -271,25 +271,15 @@
       <DependentUpon>201903262028065_validcolumn.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201903262028065_validcolumn.vb" />
+    <Compile Include="Migrations\201903270757543_salary.Designer.vb">
+      <DependentUpon>201903270757543_salary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903270757543_salary.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Services\DepartmentService.vb" />
     <Compile Include="Services\VacationService.vb" />
     <Compile Include="Services\EmployeeService.vb" />
     <Compile Include="Services\Utilities.vb" />
-    <Compile Include="UI\About.aspx.designer.vb">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\About.aspx.vb">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="UI\Contact.aspx.designer.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Contact.aspx.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="DAL\EmployeeContext.vb" />
     <Compile Include="DAL\EmployeeDatabaseInitalizer.vb" />
     <Compile Include="Default.aspx.vb">
@@ -382,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903262028065_validcolumn.resx">
       <DependentUpon>201903262028065_validcolumn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270757543_salary.resx">
+      <DependentUpon>201903270757543_salary.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

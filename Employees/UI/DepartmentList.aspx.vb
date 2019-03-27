@@ -1,10 +1,11 @@
-﻿Imports Employees.Entities
+﻿Imports System.Web.Services
+Imports Employees.Entities
 Imports Employees.Services
 
 Public Class DepartmentList
     Inherits System.Web.UI.Page
 
-    Private _departmentService As New DepartmentService
+    Private Shared _departmentService As New DepartmentService
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Startup()
@@ -15,10 +16,12 @@ Public Class DepartmentList
         Me.rtpDepartment.DataBind()
     End Sub
 
-    Public Sub SomeEvent_click()
-        Dim a = Request.Form("DepartmentName")
-        Dim b = 3
-
-    End Sub
+    <WebMethod>
+    Public Shared Function SaveDepartment(DepartmentName As String) As String
+        Dim dep As New Department
+        dep.DepartmentName = DepartmentName
+        _departmentService.SaveDepartment(dep)
+        Return "success"
+    End Function
 
 End Class

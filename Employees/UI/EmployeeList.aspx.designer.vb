@@ -30,4 +30,13 @@ Partial Public Class EmployeeList
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents drpDep As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''btnAdd control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAdd As Global.System.Web.UI.HtmlControls.HtmlButton
 End Class

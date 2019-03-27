@@ -3,7 +3,7 @@
 
         Public Property DepartmentID As Integer
         Public Property DepartmentName As String
-        Public Property Valid As Boolean
+        Public Property Valid As Boolean = True
 
     End Class
 

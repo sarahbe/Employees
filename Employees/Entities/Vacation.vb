@@ -35,7 +35,7 @@ Namespace Entities
 
         Public Property Month As String
         Public Property Year As Integer
-        Public Property Valid As Boolean
+        Public Property Valid As Boolean = True
 
         'Public Property Employee As Employee
 
