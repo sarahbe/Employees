@@ -29,7 +29,7 @@ Namespace Entities
 
         Public Property VacationID As Integer
         Public Property VacationType As VacationTypes
-        Public Property EmployeeID As Integer
+        Public Property EmployeeID() As Integer
         Public Property Days As Integer
         Public Property LeftDays As Integer
 

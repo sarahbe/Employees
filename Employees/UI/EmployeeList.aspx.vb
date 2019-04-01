@@ -18,7 +18,7 @@ Public Class EmployeeList
     End Sub
 
     Private Sub BindRepeater()
-        rptEmployee.DataSource = _employeeService.GetAllEmployees '.Where(Function(e) e.Valid)
+        rptEmployee.DataSource = _employeeService.GetAllEmployees.OrderByDescending(Function(v) v.Valid)
         rptEmployee.DataBind()
     End Sub
 
@@ -27,8 +27,7 @@ Public Class EmployeeList
         Dim id = Request.Form("EmployeeIdHd").ToString
         If formType = "delete" Then
             DeleteRecord(id)
-        Else
-
+            Return
         End If
 
         Dim departmentId = Me.drpDep.SelectedValue.ToString
@@ -59,4 +58,18 @@ Public Class EmployeeList
         BindRepeater()
     End Sub
 
+    'Private Sub rptEmployee_ItemDataBound(sender As Object, e As RepeaterItemEventArgs) Handles rptEmployee.ItemDataBound
+    '    If e.Item.ItemType = ListItemType.Header Then
+    '        Dim row As System.Web.UI.HtmlControls.HtmlTableRow = e.Item.FindControl("rowCol")
+
+    '        row.BgColor = "Red"
+    '    End If
+    'End Sub
+    Protected Function GetClassForColor(data As Object) As String
+        Dim rowOption = data
+        If Not rowOption.Valid Then
+            Return "background-color:LightGray"
+        End If
+        Return True
+    End Function
 End Class

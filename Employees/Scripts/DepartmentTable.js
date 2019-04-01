@@ -5,7 +5,7 @@
     $(".add-new").click(function () {
         $(this).attr("disabled", "disabled");
         var index = $("table tbody tr:last-child").index();
-        var row = '<tr>' +
+        var row = '<tr>' + '<td><input type="hidden" class="form-control" name="DepartmentId" id="DepartmentId"></td>' +
             '<td><input type="text" class="form-control" name="DepartmentName" id="DepartmentName"></td>' +
             '<td>' + actions + '</td>' +
             '</tr>';
@@ -17,6 +17,8 @@
     $(document).on("click", ".add", function () {
         var empty = false;
         var input = $(this).parents("tr").find('input[type="text"]');
+        var idField= $(this).parents("tr").find('input[type="hidden"]');
+
         input.each(function () {
             if (!$(this).val()) {
                 $(this).addClass("error");
@@ -28,33 +30,51 @@
         $(this).parents("tr").find(".error").first().focus();
         if (!empty) {
             var departmentName = "";
+            debugger;
+            var departmentId = idField.val();
+            console.log(departmentId);
             input.each(function () {
                 $(this).parent("td").html($(this).val());
                 departmentName = $(this).val();
+                debugger;
             });
             $.ajax({
                 method: "POST",
                 url: "DepartmentList.aspx/SaveDepartment",
-                data: " {DepartmentName:'" + departmentName + "',DepartmentId:'' }",
+                data: " {DepartmentName:'" + departmentName + "',DepartmentId:'"+ departmentId + "'}",
                 success: console.log("success"),
                 contentType: "Application/json; charset=utf-8",
                 responseType: "json"
             });
-            console.log("hello")
             $(this).parents("tr").find(".add, .edit").toggle();
             $(".add-new").removeAttr("disabled");
         }
     });
     // Edit row on edit button click
     $(document).on("click", ".edit", function () {
-        $(this).parents("tr").find("td:not(:last-child)").each(function () {
-            $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+        $(this).parents("tr").find("#department").each(function () {
+            $(this).html('<input type="text" class="form-control" value="' + $.trim($(this).text()) + '">');
         });
+        $(this).parents("tr").find("#departmentID").each(function () {
+            $(this).html('<input type="hidden" class="form-control" value="' + $.trim( $(this).text() )+ '">');
+            //console.log($(this).text());
+        })
         $(this).parents("tr").find(".add, .edit").toggle();
         $(".add-new").attr("disabled", "disabled");
     });
     // Delete row on delete button click
     $(document).on("click", ".delete", function () {
+        var idField = $(this).parents("tr").find("#departmentID").text();
+        debugger;
+        //var departmentId = idField.val();
+        $.ajax({
+            method: "POST",
+            url: "DepartmentList.aspx/DeleteDepartment",
+            data: " {DepartmentId:'" + $.trim(idField) + "'}",
+            success: console.log("delete"),
+            contentType: "Application/json; charset=utf-8",
+            responseType: "json"
+        });
         $(this).parents("tr").remove();
         $(".add-new").removeAttr("disabled");
     });

@@ -275,6 +275,10 @@
       <DependentUpon>201903270757543_salary.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201903270757543_salary.vb" />
+    <Compile Include="Migrations\201904011343440_missings.Designer.vb">
+      <DependentUpon>201904011343440_missings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011343440_missings.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Services\DepartmentService.vb" />
     <Compile Include="Services\VacationService.vb" />
@@ -375,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903270757543_salary.resx">
       <DependentUpon>201903270757543_salary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011343440_missings.resx">
+      <DependentUpon>201904011343440_missings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

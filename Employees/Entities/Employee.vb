@@ -3,7 +3,7 @@
 
         Public Property EmployeeID() As Integer
         Public Property EmployeeName() As String
-        Public Property Birthdate() As Date
+        Public Property Birthdate() As Date = DateTime.Now
         Public Property Email() As String
         Public Property MobileNo() As String
         Public Property DepartmentID() As Integer

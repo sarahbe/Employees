@@ -19,8 +19,9 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th style="width: 100px">Department</th>
-                    <th style="width: 200px"></th>
+                    <th>ID</th>
+                    <th >Department</th>
+                    <th ></th>
                 </tr>
             </thead>
 
@@ -28,7 +29,10 @@
                 <asp:Repeater ID="rtpDepartment" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td>
+                            <td id="departmentID">
+                                <asp:Label ID="lblDepartmentId" runat="server" Text='<%#Eval("DepartmentID") %>' />
+                            </td>
+                            <td id="department">
                                 <asp:Label ID="lblDepartment" runat="server" Text='<%# Eval("DepartmentName") %>' />
                             </td>
                             <td>

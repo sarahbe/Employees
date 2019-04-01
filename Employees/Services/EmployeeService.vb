@@ -29,7 +29,7 @@ Namespace Services
         Public Sub DeleteEmployee(empId As Integer)
             Dim emp = _db.Employees.FirstOrDefault(Function(e) e.EmployeeID.Equals(empId))
             emp.Valid = False
-            _db.Employees.Add(emp)
+            _db.Employees.AddOrUpdate(emp)
             _db.SaveChanges()
         End Sub
     End Class

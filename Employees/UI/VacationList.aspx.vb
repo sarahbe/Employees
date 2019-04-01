@@ -22,7 +22,7 @@ Public Class VacationList
     End Sub
 
     Private Sub BindControls()
-        Me.drpEmployee.DataSource = _employeeService.GetAllEmployees
+        Me.drpEmployee.DataSource = _employeeService.GetAllEmployees.Where(Function(e) e.Valid)
         Me.drpEmployee.DataBind()
         BindVacations()
         BindMonths()
@@ -77,6 +77,8 @@ Public Class VacationList
         If LeftDays < 0 Then
             ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "alertMessage", "alert('All vacation days are used')", True)
         End If
+        Me.drpMonthSelect.SelectedValue = month
+        Me.drpYearSelect.SelectedValue = year
 
         Dim vacation As New Vacation
         vacation.EmployeeID = employeeID
