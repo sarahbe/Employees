@@ -5,7 +5,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <script>
+     
         $(document).ready(function () {
+            var drpDep = document.getElementById("<%=drpDep.ClientID %>");
+
             $(document).on("click", ".delete", function (e) {
                 var deleteButton = $(e.target);
                 var labelEmployeeId = deleteButton.parents("tr").find(".lblEmployeeId").html();
@@ -21,6 +24,15 @@
 
             });
             $('#myModal').on('shown.bs.modal', function (e) {
+
+                console.log(drpDep.value)
+                if (drpDep.value == "") {
+                    e.stopPropagation();
+                    $('#myModal').modal('hide');
+                    alert("please make sure to add new department first!")
+                    exit();
+                }
+
                 var editButton = $(e.relatedTarget);
                 var labelEmployyName = editButton.parents("tr").find(".lblEmployeeName").html();
                 $("#EmployeeName").val(labelEmployyName);

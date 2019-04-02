@@ -16,8 +16,8 @@ Public Class EmployeeList
 
     Private Sub Startup()
         BindRepeater()
-        Me.drpDep.DataSource = _departmentService.GetAllDepartments.Where(Function(d) d.Valid)
-
+        Dim deps = _departmentService.GetAllDepartments.Where(Function(d) d.Valid)
+        Me.drpDep.DataSource = deps
         Me.drpDep.DataBind()
     End Sub
 
