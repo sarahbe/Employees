@@ -6,6 +6,7 @@ Public Class EmployeeList
 
     Private _employeeService As New EmployeeService
     Private _departmentService As New DepartmentService
+    Private _salaryService As New SalaryService
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -38,7 +39,7 @@ Public Class EmployeeList
         Dim employeeName = Request.Form("EmployeeName")
         Dim mobileno = Request.Form("MobileNo")
         Dim email = Request.Form("Email")
-        Dim salary = Request.Form("Salary")
+        'Dim salary = Request.Form("Salary")
         Dim birthdate = Date.Parse(Request.Form("Birthdate"))
         Dim employee As New Employee
 
@@ -51,7 +52,7 @@ Public Class EmployeeList
         employee.MobileNo = mobileno
         employee.Birthdate = birthdate
         employee.Email = email
-        employee.Salary = salary
+        'employee.Salary = salary
         _employeeService.SaveEmployee(employee)
         BindRepeater()
     End Sub

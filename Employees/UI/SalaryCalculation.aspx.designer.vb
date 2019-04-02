@@ -14,31 +14,13 @@ Option Explicit On
 Partial Public Class SalaryCalculation
     
     '''<summary>
-    '''drpYearSelect control.
+    '''btnSave control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents drpYearSelect As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''updVacations control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents updVacations As Global.System.Web.UI.UpdatePanel
-    
-    '''<summary>
-    '''rptVacations control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rptVacations As Global.System.Web.UI.WebControls.Repeater
+    Protected WithEvents btnSave As Global.System.Web.UI.HtmlControls.HtmlButton
     
     '''<summary>
     '''drpEmployee control.
@@ -50,11 +32,20 @@ Partial Public Class SalaryCalculation
     Protected WithEvents drpEmployee As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''drpVacation control.
+    '''updSalary control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents drpVacation As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents updSalary As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
+    '''rptSalary control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rptSalary As Global.System.Web.UI.WebControls.Repeater
 End Class

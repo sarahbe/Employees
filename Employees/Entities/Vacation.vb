@@ -46,9 +46,6 @@ Namespace Entities
             Get
                 Return _employeeService.GetEmployee(EmployeeID)
             End Get
-            'Private Set(ByVal value As Employee)
-            '    _employee = value
-            'End Set
         End Property
     End Class
 

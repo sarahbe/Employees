@@ -49,8 +49,8 @@
                 var labelEmployeeEmail = editButton.parents("tr").find(".lblEmail").html();
                 $("#Email").val(labelEmployeeEmail);
 
-                var labelEmployeeSalary = editButton.parents("tr").find(".lblSalary").html();
-                $("#Salary").val(labelEmployeeSalary);
+                //var labelEmployeeSalary = editButton.parents("tr").find(".lblSalary").html();
+                //$("#Salary").val(labelEmployeeSalary);
 
                 var labelEmployeDepartment = editButton.parents("tr").find(".lblDepartment").html();
                 $("#DepartmentID").val(labelEmployeDepartment);
@@ -157,10 +157,7 @@
                                     <label for="MobileNo">Mobile No</label>
                                     <input type="tel" class="form-control" id="MobileNo" placeholder="MobileNo" name="MobileNo">
                                 </div>
-                                <div class="form-group">
-                                    <label for="Salary">Salary</label>
-                                    <input type="tel" class="form-control" id="Salary" placeholder="Salary" name="Salary">
-                                </div>
+                                
                                 <asp:DropDownList runat="server" ID="drpDep" DataValueField="DepartmentID" DataTextField="DepartmentName"></asp:DropDownList>
                                 <input type="hidden" value="edit" id="formType" name="formType" />
                             </form>

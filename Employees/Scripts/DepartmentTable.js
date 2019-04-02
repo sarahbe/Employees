@@ -13,7 +13,7 @@
         $(this).attr("disabled", "disabled");
         var index = $("table tbody tr:last-child").index();
         var row = '<tr>' + '<td><input type="hidden" class="form-control" name="DepartmentId" id="DepartmentId"></td>' +
-            '<td><input type="text" class="form-control" name=-"DepartmentName" id="DepartmentName"></td>' +
+            '<td><input type="text" class="form-control" name="DepartmentName" id="DepartmentName"></td>' +
             '<td>' + actions + '</td>' +
             '</tr>';
         $("table").append(row);
