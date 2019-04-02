@@ -165,6 +165,7 @@ table.table {
                         <li><a runat="server" href="~/UI/EmployeeList">Employees</a></li>
                         <li><a runat="server" href="~/UI/DepartmentList">Departments</a></li>
                         <li><a runat="server" href="~/UI/VacationList">Vacations</a></li>
+                        <li><a runat="server" href="~/UI/CompensationTypeList">Compensation Type</a></li>
                     </ul>
                 </div>
             </div>

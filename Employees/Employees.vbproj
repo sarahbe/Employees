@@ -234,6 +234,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="UI\CompensationTypeList.aspx" />
     <Content Include="UI\VacationList.aspx" />
     <Content Include="UI\DepartmentList.aspx" />
     <Content Include="UI\EmployeeList.aspx" />
@@ -258,6 +259,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Entities\CompensationType.vb" />
     <Compile Include="Entities\Vacation.vb" />
     <Compile Include="Migrations\201903251832492_initial.Designer.vb">
       <DependentUpon>201903251832492_initial.vb</DependentUpon>
@@ -287,8 +289,13 @@
       <DependentUpon>201904021133592_vacationDays.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201904021133592_vacationDays.vb" />
+    <Compile Include="Migrations\201904021443386_compensation.Designer.vb">
+      <DependentUpon>201904021443386_compensation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904021443386_compensation.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Services\DepartmentService.vb" />
+    <Compile Include="Services\SalaryService.vb" />
     <Compile Include="Services\VacationService.vb" />
     <Compile Include="Services\EmployeeService.vb" />
     <Compile Include="Services\Utilities.vb" />
@@ -331,6 +338,13 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CompensationTypeList.aspx.designer.vb">
+      <DependentUpon>CompensationTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompensationTypeList.aspx.vb">
+      <DependentUpon>CompensationTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="UI\VacationList.aspx.designer.vb">
       <DependentUpon>VacationList.aspx</DependentUpon>
@@ -389,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904021133592_vacationDays.resx">
       <DependentUpon>201904021133592_vacationDays.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904021443386_compensation.resx">
+      <DependentUpon>201904021443386_compensation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

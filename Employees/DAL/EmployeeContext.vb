@@ -12,6 +12,7 @@ Namespace DAL
         Public Property Departments As DbSet(Of Department)
         Public Property Employees As DbSet(Of Employee)
         Public Property Vacations As DbSet(Of Vacation)
+        Public Property CompensationTypes As DbSet(Of CompensationType)
     End Class
 End Namespace
 
