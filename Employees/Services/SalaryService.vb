@@ -26,7 +26,7 @@ Namespace Services
         Public Function GetSalaryByEmployee(id As Integer?) As List(Of Salary)
             Dim sal = New List(Of Salary)
             If id.HasValue Then
-                sal = _db.Salaries.Where(Function(e) e.EmployeeID.Equals(id)).ToList
+                sal = _db.Salaries.Where(Function(e) e.EmployeeID = id).ToList
                 If sal.Count = 0 Then
                     For Each com In _db.CompensationTypes.Where(Function(c) c.Valid)
                         sal.Add(New Salary With {.CompensationTypeID = com.CompensationTypeID, .Valid = True})

@@ -40,7 +40,11 @@ Public Class EmployeeList
         Dim mobileno = Request.Form("MobileNo")
         Dim email = Request.Form("Email")
         'Dim salary = Request.Form("Salary")
-        Dim birthdate = Date.Parse(Request.Form("Birthdate"))
+        Dim birthField = Request.Form("Birthdate")
+        Dim birthdate = Date.ParseExact("01/01/1990", "dd/MM/yyyy", Nothing)
+        If birthField <> "" Then
+            birthdate = Date.Parse(birthField)
+        End If
         Dim employee As New Employee
 
 

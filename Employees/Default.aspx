@@ -6,7 +6,7 @@
     <ul>
         <li>Add new department, then you are ready to add employees. (you can try to add employee first, you will get a warning message! 😎 )
         </li>
-        <li>You can view total salary amount on employees page.🤑 </li>
+        <li>You can view salary amount on employees page.🤑 </li>
         <li>Add salary breakdown on salary calculation page</li>
         <li>Add vacations as you like, but remember you only have 30 days available. There is no restriction on the system for vacations over 30 days, we will just warn you 🤓 </li>
     </ul>

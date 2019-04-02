@@ -9,6 +9,7 @@ Namespace DAL
         Protected Overrides Sub Seed(ByVal context As EmployeeContext)
             GetDepartments().ForEach(Sub(c) context.Departments.Add(c))
             GetEmployees().ForEach(Sub(p) context.Employees.Add(p))
+            GetCompensationTypes.ForEach(Sub(s) context.CompensationTypes.Add(s))
             context.SaveChanges()
         End Sub
 
@@ -31,21 +32,33 @@ Namespace DAL
                 New Employee With {
                     .EmployeeID = 1,
                     .EmployeeName = "Sarah Bayrakdar",
-                    .Birthdate = Date.Parse("01/01/1990"),
+                    .Birthdate = Date.ParseExact("01/01/1990", "dd/MM/yyyy", Nothing),
                     .MobileNo = "0568880051",
                     .Email = "sarah@gmail.com",
-                    .DepartmentID = 1
+                    .DepartmentID = 1,
+                    .Valid = True
                 },
               New Employee With {
                     .EmployeeID = 2,
                     .EmployeeName = "Ahmad Ahmad",
-                    .Birthdate = Date.Parse("25/05/1985"),
+                    .Birthdate = Date.ParseExact("25/05/1985", "dd/MM/yyyy", Nothing),
                     .MobileNo = "012345678",
                     .Email = "ahmad@gmail.com",
-                    .DepartmentID = 2
+                    .DepartmentID = 2,
+                     .Valid = True
                 }
             }
             Return employees
         End Function
+        Private Shared Function GetCompensationTypes() As List(Of CompensationType)
+            Dim ctyp = New List(Of CompensationType) From {
+                New CompensationType With {
+            .CompensationTypeID = 1,
+            .CompensationTypeName = "Basic Salary"
+                 }
+            }
+            Return ctyp
+        End Function
+
     End Class
 End Namespace
