@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class VacationList
     
     '''<summary>
-    '''drpMonthSelect control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents drpMonthSelect As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
     '''drpYearSelect control.
     '''</summary>
     '''<remarks>
@@ -66,22 +57,4 @@ Partial Public Class VacationList
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents drpVacation As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''drpMonth control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents drpMonth As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''drpYear control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents drpYear As Global.System.Web.UI.WebControls.DropDownList
 End Class

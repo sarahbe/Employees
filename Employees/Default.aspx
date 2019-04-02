@@ -2,6 +2,4 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-  <h2>Employee Database</h2>
-
 </asp:Content>

@@ -20,8 +20,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th >Department</th>
-                    <th ></th>
+                    <th>Department</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -37,8 +37,8 @@
                             </td>
                             <td>
                                 <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                <a class="edit" title="Edit" data-toggle="tooltip" ><i class="material-icons">&#xE254;</i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip" ><i class="material-icons">&#xE872;</i></a>
                             </td>
                         </tr>
                     </ItemTemplate>

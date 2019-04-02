@@ -8,12 +8,16 @@ Public Class EmployeeList
     Private _departmentService As New DepartmentService
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Startup()
+        If Not IsPostBack Then
+            Startup()
+
+        End If
     End Sub
 
     Private Sub Startup()
         BindRepeater()
-        Me.drpDep.DataSource = _departmentService.GetAllDepartments
+        Me.drpDep.DataSource = _departmentService.GetAllDepartments.Where(Function(d) d.Valid)
+
         Me.drpDep.DataBind()
     End Sub
 

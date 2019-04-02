@@ -1,13 +1,16 @@
-﻿Imports Employees.Entities
+﻿Imports System.Data.Entity.Migrations
+Imports Employees.Entities
 
 Namespace Services
     Public Class VacationService
 
         Private _db As New Employees.DAL.EmployeeContext()
 
-        Public Function GetAllVacationsByMonthYear(month As String, year As Integer) As List(Of Vacation)
+        Public Function GetAllVacationsByMonthYear(year As Integer) As List(Of Vacation)
             Dim vacList As New List(Of Vacation)
-            vacList = _db.Vacations.Include("Employee").Where(Function(v) v.Month.Equals(month) AndAlso v.Year.Equals(year)).ToList
+            If _db.Vacations.Any Then
+                vacList = _db.Vacations.Where(Function(v) v.VacationFrom.Year.Equals(year)).ToList
+            End If
             Return vacList
         End Function
 
@@ -24,6 +27,13 @@ Namespace Services
 
         Public Sub SaveVacation(vac As Vacation)
             _db.Vacations.Add(vac)
+            _db.SaveChanges()
+        End Sub
+
+        Public Sub DeleteVacation(vacID As Integer)
+            Dim vac = _db.Vacations.FirstOrDefault(Function(v) v.VacationID.Equals(vacID))
+            vac.Valid = False
+            _db.Vacations.AddOrUpdate(vac)
             _db.SaveChanges()
         End Sub
     End Class

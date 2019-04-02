@@ -32,6 +32,8 @@ Namespace Entities
         Public Property EmployeeID() As Integer
         Public Property Days As Integer
         Public Property LeftDays As Integer
+        Public Property VacationFrom() As Date = DateTime.Now
+        Public Property VacationTo() As Date = DateTime.Now
 
         Public Property Month As String
         Public Property Year As Integer
@@ -40,13 +42,13 @@ Namespace Entities
         'Public Property Employee As Employee
 
         Private _employee As New Employee
-        Public Property Employee() As Employee
+        Public ReadOnly Property Employee() As Employee
             Get
                 Return _employeeService.GetEmployee(EmployeeID)
             End Get
-            Set(ByVal value As Employee)
-                _employee = value
-            End Set
+            'Private Set(ByVal value As Employee)
+            '    _employee = value
+            'End Set
         End Property
     End Class
 

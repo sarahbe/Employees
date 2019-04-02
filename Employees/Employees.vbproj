@@ -157,6 +157,7 @@
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\Images\employeedb.png" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
     <Content Include="Content\solid.css" />
@@ -236,7 +237,6 @@
     <Content Include="UI\VacationList.aspx" />
     <Content Include="UI\DepartmentList.aspx" />
     <Content Include="UI\EmployeeList.aspx" />
-    <Content Include="UserControls\NewEmployee.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -279,6 +279,14 @@
       <DependentUpon>201904011343440_missings.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201904011343440_missings.vb" />
+    <Compile Include="Migrations\201904020723563_changes.Designer.vb">
+      <DependentUpon>201904020723563_changes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904020723563_changes.vb" />
+    <Compile Include="Migrations\201904021133592_vacationDays.Designer.vb">
+      <DependentUpon>201904021133592_vacationDays.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904021133592_vacationDays.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Services\DepartmentService.vb" />
     <Compile Include="Services\VacationService.vb" />
@@ -345,13 +353,6 @@
       <DependentUpon>EmployeeList.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="UserControls\NewEmployee.ascx.designer.vb">
-      <DependentUpon>NewEmployee.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\NewEmployee.ascx.vb">
-      <DependentUpon>NewEmployee.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -382,6 +383,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904011343440_missings.resx">
       <DependentUpon>201904011343440_missings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904020723563_changes.resx">
+      <DependentUpon>201904020723563_changes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904021133592_vacationDays.resx">
+      <DependentUpon>201904021133592_vacationDays.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

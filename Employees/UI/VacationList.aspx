@@ -2,7 +2,23 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script>
+        function deleteIt(id) {
 
+            $.ajax({
+                method: "POST",
+                url: "VacationList.aspx/DeleteVacation",
+                data: " {vacationID:'" + id + "'}",
+                success: function (data) {
+                   window.location.reload();
+                },
+                contentType: "Application/json; charset=utf-8",
+                responseType: "json"
+            });
+        }
+
+
+    </script>
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
@@ -14,8 +30,7 @@
                 </div>
             </div>
         </div>
-        <label>Month / Year</label>
-        <asp:DropDownList runat="server" ID="drpMonthSelect" AutoPostBack="true"></asp:DropDownList>
+        <label>Please Select a Year</label>
         <asp:DropDownList runat="server" ID="drpYearSelect" AutoPostBack="true"></asp:DropDownList>
 
 
@@ -25,21 +40,21 @@
                     <HeaderTemplate>
                         <table class="table table-bordered" cellspacing="0" rules="all" border="1">
                             <tr>
-                                <th scope="col" >Employee Name
+                                <th scope="col">Employee Name
                                 </th>
                                 <th scope="col">Vacation Type
                                 </th>
-                                <th scope="col" >Month/Year
+                                <th scope="col">From - To 
                                 </th>
-                                <th scope="col" >Days
+                                <th scope="col">Days
                                 </th>
-                                <th scope="col" >Left Days
+                                <th scope="col">Left Days
                                 </th>
+                                <th></th>
                             </tr>
                     </HeaderTemplate>
                     <ItemTemplate>
                         <tr>
-                          
                             <td>
                                 <asp:Label ID="lblEmployeeName" runat="server" Text='<%# Eval("Employee.EmployeeName") %>' />
                             </td>
@@ -47,13 +62,16 @@
                                 <asp:Label ID="lblVacationType" runat="server" Text='<%# Eval("VacationType") %>' />
                             </td>
                             <td>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Month") & " / " & Eval("Year") %>' />
+                                <asp:Label ID="lblFromTo" runat="server" Text='<%# Eval("VacationFrom", "{0:dd/MM/yyyy}") & " - " & Eval("VacationTo", "{0:dd/MM/yyyy}") %>'></asp:Label>
                             </td>
                             <td>
                                 <asp:Label ID="lblDays" runat="server" Text='<%# Eval("Days") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="lblLeftDays" runat="server" Text='<%# Eval("LeftDays") %>' />
+                            </td>
+                            <td>
+                                <a class="delete" title="Delete" data-toggle="tooltip" onclick="deleteIt('<%# Eval("VacationID") %>')"><i class="material-icons">&#xE872;</i></a>
                             </td>
                         </tr>
                     </ItemTemplate>
@@ -88,15 +106,16 @@
                                     <label for="VacationType">Vacation Type</label>
                                     <asp:DropDownList runat="server" ID="drpVacation"></asp:DropDownList>
                                 </div>
+                         
+                                 <div class="form-group">
+                                    <label for="VacationStart">VacationStart</label>
+                                    <input type="date" class="form-control" id="VacationStart" name="VacationStart">
+                                     </div>
                                 <div class="form-group">
-                                    <label for="Month">Month / Year</label>
-                                    <asp:DropDownList runat="server" ID="drpMonth"></asp:DropDownList>
-                                    <asp:DropDownList runat="server" ID="drpYear"></asp:DropDownList>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Days">Days</label>
-                                    <input type="number" class="form-control" id="Days" placeholder="Days" name="Days">
-                                </div>
+                                    <label for="VacationEnd">VacationEnd</label>
+                                    <input type="date" class="form-control" id="VacationEnd" name="VacationEnd">
+                                     </div>
+                            
                             </form>
                         </div>
                     </div>

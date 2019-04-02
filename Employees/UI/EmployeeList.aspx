@@ -17,7 +17,7 @@
                 $("#MainContent_btnAdd").trigger("click")
 
                 console.log($("#MainContent_btnAdd"))
-                console.log( $("#EmployeeForm"))
+                console.log($("#EmployeeForm"))
 
             });
             $('#myModal').on('shown.bs.modal', function (e) {
@@ -58,7 +58,6 @@
                 </div>
                 <div class="col-sm-4">
                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Add New Employee</button>
-
                 </div>
             </div>
         </div>
@@ -151,7 +150,7 @@
                                     <input type="tel" class="form-control" id="Salary" placeholder="Salary" name="Salary">
                                 </div>
                                 <asp:DropDownList runat="server" ID="drpDep" DataValueField="DepartmentID" DataTextField="DepartmentName"></asp:DropDownList>
-                                <input type="hidden" value="edit" id="formType" name="formType"/>
+                                <input type="hidden" value="edit" id="formType" name="formType" />
                             </form>
                         </div>
                     </div>
